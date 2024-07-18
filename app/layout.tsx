@@ -5,6 +5,7 @@ import { Toaster } from '@/components/ui/Toasts/toaster';
 import { PropsWithChildren, Suspense } from 'react';
 import { getURL } from '@/utils/helpers';
 import 'styles/main.css';
+import OpenAIForm from "@/components/OpenAIForm";
 
 const title = 'Next.js Subscription Starter';
 const description = 'Brought to you by Vercel, Stripe, and Supabase.';
@@ -30,6 +31,7 @@ export default async function RootLayout({ children }: PropsWithChildren) {
         >
           {children}
         </main>
+        <OpenAIForm/>
         <Footer />
         <Suspense>
           <Toaster />
