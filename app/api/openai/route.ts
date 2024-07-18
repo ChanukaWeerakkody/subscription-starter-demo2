@@ -25,7 +25,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                 throw new Error(`OpenAI API request failed with status ${response.status}`);
             }
 
-            const data = await response.json();
+            const data:any = await response.json();
             res.status(200).json({ result: data.choices[0]?.message.content || 'No response' });
         } catch (error) {
             res.status(500).json({ error: (error as Error).message });
